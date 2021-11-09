@@ -2,59 +2,13 @@ import React, { useState } from "react";
 import { Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
+// import { makeStyles } from "@material-ui/core";
 import TextField from '@material-ui/core/TextField';
 
 
-const useStyles = makeStyles({
-    main: {
 
-        backgroundColor: "#e0e0e0",
-        marginTop: 20,
-        marginBottom: 20,
-        boxShadow: " 0 0 15px #000040",
-        height:"500px",
-        padding:0, overflow:'scroll'
-
-    },
-    btn: {
-        marginTop: 7,
-        marginBottom: 20,
-    },
-    field: {
-
-        marginBottom: 8,
-        marginRight: 8,
-        backgroundColor: "white",
-        borderRadius: 3,
-
-    },
-
-    divo: {
-        // border: "3px solid black",
-        width: "36%",
-        padding: "20px",
-    },
-    divp: {
-        // border: "3px solid red",
-        width: "36%",
-        padding: "20px",
-    },
-    d2t1: {
-        // backgroundColor: "yellow",
-        lineHeight: 1.5,
-    },
-    d2t2: {
-
-        // backgroundColor: "yellow",
-        lineHeight: 1.3,
-        
-    }
-
-
-})
 export default function TextMe() {
-    const classes = useStyles()
+    //  const classes = useStyles()
     const [name, setName] = useState('')
     const [lastName, setLastName] = useState('')
     const [mail, setMail] = useState('')
@@ -88,21 +42,20 @@ export default function TextMe() {
     }
     return (
         //CONTACT.............
-        <Container className={classes.main}>
+        <Container className="container">
 
-            <div style={{ display: "flex" }}>
-                <div className={classes.divo}>
+            <div className='contact-main'>
+                <div className="contact-form">
                     <Typography
                         variant="h4"
-                        color="Secondary"
                         component="h2"
-                        style={{lineHeight: 1 }}
+                        style={{ lineHeight: 1, color: "#2196f3" }}
                     >
-                        Just Say Hello ! </Typography><br /><Typography >Please Fill The Form ...</Typography>
+                        Just Say Hello ! </Typography><br /><Typography style={{ letterSpacing: ".2vh" }}>Please Fill The Form ...</Typography>
                     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                         <TextField
                             onChange={(e) => setName(e.target.value)}
-                            className={classes.field}
+                            className="contact-field"
                             label="Name"
                             variant="outlined"
                             required
@@ -110,7 +63,7 @@ export default function TextMe() {
                         />
                         <TextField
                             onChange={(e) => setLastName(e.target.value)}
-                            className={classes.field}
+                            className="contact-field"
                             label="Last Name"
                             variant="outlined"
                             required
@@ -119,7 +72,7 @@ export default function TextMe() {
                         <br />
                         <TextField
                             onChange={(e) => setMail(e.target.value)}
-                            className={classes.field}
+                            className="contact-field"
                             label="Mail"
                             variant="outlined"
                             type="email"
@@ -127,7 +80,7 @@ export default function TextMe() {
                             error={mailError} />
                         <TextField
                             onChange={(e) => setPhone(e.target.value)}
-                            className={classes.field}
+                            className="contact-field"
                             label="Phone"
                             variant="outlined"
                             type="number"
@@ -136,36 +89,33 @@ export default function TextMe() {
                         <br />
                         <TextField
                             onChange={(e) => setMessage(e.target.value)}
-                            className={classes.field}
+                            className="contact-field"
                             label="Message"
                             variant="outlined"
                             multiline
                             rows={4}
                             required
-                            fullWidth
                             error={messageError}
+                            style={{ width: '62%' }}
 
                         />
                         <br />
-                        <Button className={classes.btn} type="submit"
-                            color="Secondary"
-                            variant="contained"
-                        >Submit</Button>
+                        <Button type="submit" variant="contained" color="primary" >Submit</Button>
                     </form>
                 </div>
 
-                <div className={classes.divp}>
+                <div className="contact-info">
                     <Typography
 
                         variant="h4"
-                        color="Secondary"
+
                         component="h2"
-                        style={{ lineHeight: 1 }}
+                        style={{ lineHeight: 1, color: "#2196f3" }}
                     >
                         Contact <br />Information </Typography>
                     <br />
                     <Typography
-                        className={classes.d2t1}>
+                        className="contact-call">
                         410 Pinglena<br />Pulwama 192301<br />India
                         <br /><br />Call Us: +12345 67890 <br /><br />
                         We are open from Monday - Friday<br />08: 00am - 05: 00 pm
@@ -174,16 +124,15 @@ export default function TextMe() {
 
                     <Typography
                         variant="h4"
-                        color="Secondary"
                         component="h2"
-                        style={{lineHeight: 2 }}
+                        style={{ lineHeight: 2, color: "#2196f3" }}
                     >
                         Follow Us</Typography>
                     <Typography
-                        className={classes.d2t2}>
-                        <a href="https://facebook.com" target="_blank" style={{ padding: 3, textDecoration: 'none', color: "black", borderBottom: "3px solid red" }}> Facebook</a>
-                        <a href="https://instagram.com" target="_blank" style={{ padding: 3, textDecoration: 'none', color: "black", borderBottom: "3px solid red" }} > Instagram</a>
-                        <a href="https://twitter.com" target="_blank" style={{ padding: 3, textDecoration: 'none', color: "black", borderBottom: "3px solid red" }}> Twitter</a>
+                        className="contact-call">
+                        <a href="https://facebook.com" target="_blank" className="contact-social"> Facebook</a>
+                        <a href="https://instagram.com" target="_blank" className="contact-social"> Instagram</a>
+                        <a href="https://twitter.com" target="_blank" className="contact-social"> Twitter</a>
                     </Typography>
 
                 </div>

@@ -1,12 +1,13 @@
 import { Typography } from "@material-ui/core";
 
-const Blog = () => {
-  return <Typography variant="h4"
-    color="Primary"
-    component="h2">
-    BLOG
+const Service = () => {
+  return <Typography
+    variant="h4"
+    component="h2"
+    className="navBody">
+    SERVICES
 
   </Typography>;;
 };
 
-export default Blog;
+export default Service;

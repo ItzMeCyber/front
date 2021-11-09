@@ -1,49 +1,36 @@
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./frontNav1";
-import Blog from "./frontNav2";
+import Service from "./frontNav2";
 import About from "./frontNav3";
 import Contact from "./frontNav4";
 import TextMe from "./frontContact";
-import { makeStyles } from "@material-ui/core";
-import BlogMe from "./frontBlogs";
+import ServiceMe from "./frontServices";
 import HomeMe from "./frontHome";
 import AboutMe from "./frontAbout";
 //npm install react-bootstrap@next bootstrap@5.1.1
 
 
 
-const useStyles = makeStyles({
-    nav: {
-        display: "flex",
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        fontSize: "x-large",
-        backgroundColor: '',
-        height: "8vh",
-        alignItems: "center",
-        background: "lightblue",
-        boxShadow: "inset 0 0 15px #000060",
-        padding: "10px",
 
 
 export default function Nav() {
-    const classes = useStyles()
+
     return (
         <Router>
-
-            <div className={classes.nav}>
+            {/*
+            <div className="nav">
                 <div>
-                    <img src="logo512.png" style={{ height: 40,marginLeft:20 }} />
+                    <img src="logo512.png" style={{ height: 40, marginLeft: 20 }} />
                 </div>
-                <div style={{display:'flex'}}>
+                <div style={{ display: 'flex' }}>
                     <div>
                         <Link to="/" className="navContent"  >Home</Link>
                     </div>
 
 
                     <div>
-                        <Link to="/blog" className="navContent" >Blog</Link>
+                        <Link to="/service" className="navContent" >Service</Link>
                     </div>
                     <div>
                         <Link to="/about" className="navContent" >About</Link>
@@ -52,7 +39,48 @@ export default function Nav() {
                         <Link to="/contact" className="navContent" >Contact</Link>
                     </div>
                 </div>
-            </div>
+</div>*/}
+            <nav className='main-nav'>
+                <div class="logo">Cybers</div>
+                <label for="btn" class="icon">
+                    <span><i class="fas fa-plus" ></i></span>
+                </label>
+                <input type="checkbox" id="btn" />
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li>
+                        <label for="btn-1" class="show">Features+</label>
+                        <a href="#">Features</a>
+                        <input type="checkbox" id="btn-1" />
+                        <ul>
+                            <li><a href="#">Feature1</a></li>
+                            <li><a href="#">Feature2</a></li>
+                            <li><a href="#">Feature3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="btn-2" class="show">Services+ </label>
+                        <a href="#">Services</a>
+                        <input type="checkbox" id="btn-2" />
+                        <ul>
+                            <li> <Link to="/service">Service</Link></li>
+                            <li><a href="#">Service2</a></li>
+                            <li>
+                                <label for="btn-3" class="show">More+</label>
+                                <a href="#">More <span class="fa fa-plus"></span></a>
+                                <input type="checkbox" id="btn-3" />
+                                <ul>
+                                    <li><a href="#">Submenu1</a></li>
+                                    <li><a href="#">Submenu2</a></li>
+                                    <li><a href="#">Submenu3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                </ul>
+            </nav>
 
 
             <Switch>
@@ -60,9 +88,9 @@ export default function Nav() {
                     <Home />
                     <HomeMe />
                 </Route>
-                <Route path="/blog">
-                    <Blog />
-                    <BlogMe />
+                <Route path="/service">
+                    <Service />
+                    <ServiceMe />
                 </Route>
                 <Route path="/about">
                     <About />

@@ -17,10 +17,10 @@ function App() {
 
   return (<React.Fragment>
     < div className="d-1">
-  
-  <Nav/>
-  <Foot/>
- 
+
+      <Nav />
+      <Foot />
+
 
     </div>
   </React.Fragment>

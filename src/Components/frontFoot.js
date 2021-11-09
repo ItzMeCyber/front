@@ -1,31 +1,40 @@
-import { Container } from "@material-ui/core";
+
 import React from "react";
-import { makeStyles } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+import { Typography, Container } from "@material-ui/core";
 
-const useStyles = makeStyles({
-    main: {
 
-        background:"lightblue",
-        boxShadow: "inset 0 0 15px #000060",
-        marginTop: 20,
-        marginBottom: 20,
-        height: "60px",
-        textAlign:"center",
-        paddingTop:10
 
-    },
-})
 
 export default function Foot() {
-    const classes = useStyles()
+
     return (
 
-        <div className={classes.main} > 
-        <Typography>
-            SUHAIL/////
-        </Typography>
-         </div>
+        <Container className="frontFooter" >
+            <Typography>
+                <div>
+
+                    <div style={{ textAlign: "center" }}> &copy; Copyright
+                        <strong><span> Cyber</span></strong>. All
+                        Rights
+                        Reserved
+                    </div>
+                    <div className="frontFooterLinks">
+                        <div style={{ textAlign: "center", paddingright: "10px" }}><strong><span>Useful Links</span></strong><br />
+                            <a href="#">link-1</a><br />
+                            <a href="#">link-2</a><br />
+                            <a href="#">link-3</a>
+                        </div>
+                        <div style={{ textAlign: "center", paddingLeft: "10px" }}><strong><span>Social Links</span></strong><br />
+                            <a href="#" >FaceBook</a><br />
+                            <a href="#" >Insta</a><br />
+                            <a href="#">link-3</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </Typography>
+        </Container>
 
     )
 }
