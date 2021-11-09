@@ -26,11 +26,6 @@ const useStyles = makeStyles({
         boxShadow: "inset 0 0 15px #000060",
         padding: "10px",
 
-    },
-
-
-
-})
 
 export default function Nav() {
     const classes = useStyles()
